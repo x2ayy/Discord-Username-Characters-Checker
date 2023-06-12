@@ -9,6 +9,8 @@ You can use this to find any possible 2 letter usernames
 
 - [@Jirgap](https://github.com/Jirgap)
 
+## WARNING
+Spamming Discords API is against TOS and can lead to your account being suspended or banned, please use an alt when doing this! I am not responsible for any damage casued by the end user
 
 ## Usage/Examples
 
