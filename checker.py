@@ -34,8 +34,7 @@ def check_username(user: str):
             print(f"{Fore.RED}{check.status_code} {user} is not available {Fore.RESET}")
     except KeyError:
         if check.status_code == 403 or check.status_code == 401:
-            print("REQUST DENIED, IS DISCORD TOKEN CORRECT? ARE YOU SENDING TOO MANY REQUESTS")
-            return False
+            print("Your request was denied, you need to have the name change option available for it to work!")
 
 def main_menu() -> list:
     print("Welcome to Discord Username Checker")
