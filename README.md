@@ -7,7 +7,7 @@ You can use this to find any possible 2 letter usernames
 
 ## Authors
 
-- [@Jirgap](https://github.com/Jirgap)
+- [@ClientlessX](https://github.com/clientlessx)
 
 ## WARNING
 Spamming Discords API is against TOS and can lead to your account being suspended or banned, please use an alt when doing this! I am not responsible for any damage casued by the end user
