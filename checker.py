@@ -15,7 +15,7 @@ REQUEST_HEADERS = {
 
 
 def generate_random_username(length: int) -> str:
-    return ''.join(rand_sample(ascii_letters + digits, length))
+    return ''.join(rand_sample(ascii_letters + digits + "_" + ".", length))
 
 def check_username(user: str):
     if 1 > len(user) < 33:
