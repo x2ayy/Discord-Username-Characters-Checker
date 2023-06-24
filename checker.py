@@ -1,5 +1,5 @@
 from random import sample as rand_sample
-from string import ascii_letters
+from string import ascii_letters, digits
 from requests import patch as req_patch
 from time import sleep
 from colorama import Fore
@@ -15,7 +15,7 @@ REQUEST_HEADERS = {
 
 
 def generate_random_username(length: int) -> str:
-    return ''.join(rand_sample(ascii_letters, length))
+    return ''.join(rand_sample(ascii_letters + digits, length))
 
 def check_username(user: str):
     if 1 > len(user) < 33:
