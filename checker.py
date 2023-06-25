@@ -3,6 +3,7 @@ from string import ascii_letters, digits
 from requests import patch as req_patch
 from time import sleep
 from colorama import Fore
+from json.decoder import JSONDecodeError
 
 
 BASE_URL = "https://discord.com/api/v9/users/@me"
@@ -33,6 +34,8 @@ def check_username(user: str):
         checked_user = check.json()
         if checked_user["errors"]["username"]["_errors"][0]["code"] == "USERNAME_ALREADY_TAKEN":
             print(f"{Fore.RED}[+] {user} is not available {Fore.RESET}")
+    except JSONDecodeError:
+        print(f"{Fore.RED}[-] The JSON Content is an invalid format {Fore.RESET}")
     except KeyError:
         try:
             if checked_user["errors"]["password"]:
