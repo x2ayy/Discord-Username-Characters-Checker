@@ -35,7 +35,7 @@ def check_username(user: str):
         if checked_user["errors"]["username"]["_errors"][0]["code"] == "USERNAME_ALREADY_TAKEN":
             print(f"{Fore.RED}[+] {user} is not available {Fore.RESET}")
     except JSONDecodeError:
-        print(f"{Fore.RED}[-] The JSON Content is an invalid format {Fore.RESET}")
+        print(f"{Fore.RED}[-] The JSON Content is an invalid format {Fore.RESET}\n[DEBUG] Response: {check.status_code} {check}")
     except KeyError:
         try:
             if checked_user["errors"]["password"]:
