@@ -28,8 +28,9 @@ def check_username(user: str):
         "username": user
     }
     check = req_patch(BASE_URL, headers=REQUEST_HEADERS, json=data)
-    checked_user = check.json()
+    
     try:
+        checked_user = check.json()
         if checked_user["errors"]["username"]["_errors"][0]["code"] == "USERNAME_ALREADY_TAKEN":
             print(f"{Fore.RED}[+] {user} is not available {Fore.RESET}")
     except KeyError:
