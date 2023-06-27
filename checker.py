@@ -36,17 +36,16 @@ def check_username(user: str):
 
         if checked_user_code == "USERNAME_ALREADY_TAKEN":
             print(f"{Fore.RED}[+] {user} is not available {Fore.RESET}")
+        else:
+            print(f"{Fore.GREEN}[+] {user} is available {Fore.RESET}")
     except JSONDecodeError:
         print(f"{Fore.RED}[-] The JSON Content is a invalid format")
     except KeyError:
         if check.status_code == 403 or check.status_code == 401:
             print(f"{Fore.RED}[-] Your request was denied, is your token correct? {Fore.RESET}")
-        try:
-            checked_pass_code = checked_user["errors"]["password"]["_errors"][0]["code"]
-            if checked_pass_code == "PASSWORD_DOES_NOT_MATCH":
-                print(f"{Fore.GREEN}[+] {user} is available {Fore.RESET}")
-        except KeyError:
-            print(f"[DEBUG] {check.status_code} {checked_user}")
+        else:
+            print(f"{Fore.RED}[DEBUG] Reponse: {check.status_code} Data: {checked_user} {Fore.RESET}")
+
 
 def main_menu() -> list:
     print("Welcome to Discord Username Checker")
